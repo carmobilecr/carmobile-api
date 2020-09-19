@@ -1,23 +1,62 @@
 const mongoose = require('mongoose');
 
-const Photos = mongoose.Schema({
-    front: String,
-    leftSide: String,
-    rightSide: String
-})
-
 const Brand = mongoose.Schema({
     brandName: String,
     modelName: String,
     editionName: String
 })
 
+const Photos = mongoose.Schema({
+    front: String,
+    leftSide: String,
+    rightSide: String,
+    rear: String,
+    dash: String,
+    engine: String,
+    openDoor: String,
+    gate: String,
+    tire: String,
+    passengerSeat: String,
+    backSeat: String,
+    gearLever: String,
+    pedal: String,
+    radio: String,
+    tachometer: String,
+    gloveBox: String,
+    sunroof: String
+})
+
+const Feature = mongoose.Schema({
+    featureName: String
+})
 
 const CarSchema = mongoose.Schema({
     brand: Brand,
     style: String,
     gas: String,
-    photos: Photos
+    year: Number,
+    cylinder: Number,
+    transmission: String,
+    mileage: Number,
+    doors: Number,
+    price: Number,
+    isNegotiable: Boolean,
+    description: String,
+    licensePlate: Number,
+    status: String,
+    systemUser: String,
+    views: Number,
+    financing: Boolean,
+    tons: Number,
+    bodyStatus: Number,
+    mechanicStatus: Number,
+    state: String,
+    city: String,
+    photos: Photos,
+    feature: Feature,
+    createDate: Date,
+    modifyDate: Date,
+    deactivateDate: Date
 });
 
 module.exports = CarSchema;
