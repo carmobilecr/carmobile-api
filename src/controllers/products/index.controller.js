@@ -2,10 +2,14 @@ const { DB_USER } = require('../../database/index');
 
 const postTest = async (req, res) => {
   const car = req.body;
-  const newUser = new DB_USER(car);
-  const result = await newUser.save();
-  console.log(result);
-  res.status(200).json({});
+  try {
+    const newUser = new DB_USER(car);
+    const result = await newUser.save();
+    console.log(result);
+    res.status(200).json({});
+  } catch (error) {
+    res.status(status.error).json({'MessageBody':'An Error occured, try later'});
+}
 }
 
 // const createUsers = async (req, res) => {

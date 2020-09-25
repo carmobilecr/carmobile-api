@@ -27,7 +27,33 @@ const Photos = mongoose.Schema({
 })
 
 const Feature = mongoose.Schema({
-    featureName: String
+    centralLock: Boolean,
+    electricGlass: Boolean,
+    electricMirror: Boolean,
+    alarm: Boolean,
+    airBag: Boolean,
+    absBreaks: Boolean,
+    airConditioning: Boolean,
+    hydraulicSteering: Boolean,
+    adjustableSteering: Boolean,
+    radioControlOnSteering: Boolean,
+    cruiserControl: Boolean,
+    dualGearbox: Boolean,
+    bluetooth: Boolean,
+    usbRadio: Boolean,
+    cdPlayer: Boolean,
+    touchScreenRadio: Boolean,
+    frontCamera: Boolean,
+    reverseCamera: Boolean,
+    reverseSensors: Boolean,
+    halogenLamp: Boolean,
+    tintedWindows: Boolean,
+    luxuryRings: Boolean,
+    turbo: Boolean,
+    leatherUpholstery: Boolean,
+    electronicStabilityControl: Boolean,
+    descentControl: Boolean,
+    tirePressureMonitor: Boolean
 })
 
 const CarSchema = mongoose.Schema({
@@ -42,7 +68,7 @@ const CarSchema = mongoose.Schema({
     price: Number,
     isNegotiable: Boolean,
     description: String,
-    licensePlate: Number,
+    licensePlate: String,
     status: String,
     systemUser: String,
     views: Number,

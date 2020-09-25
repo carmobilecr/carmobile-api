@@ -25,7 +25,7 @@ const SearchSchema = mongoose.Schema(
         city: String,
         priceBottom: Number,
         priceTop: Number,
-        carFeatures: Feature,
+        carFeatures: Feature
     }
 )
 

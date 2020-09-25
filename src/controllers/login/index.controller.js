@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const loginUser = async (req, res) => {
+  try {
   const { username, password } = req.body;
   const user = {
     name: username
@@ -9,6 +10,9 @@ const loginUser = async (req, res) => {
   res.json({
     accessToken: accessToken
   })
+  } catch (error) {
+    res.status(status.error).json({'MessageBody':'An Error occured, try later'});
+  }
 }
 
 module.exports = {
